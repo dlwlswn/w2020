@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>css</title>
+	<!-- <link rel="stylesheet" href="style.css"> 자주사용함 -->
+	<style>
+		/*@import url("style.css");*/
+		@import "style.css";
+	</style>
+</head>
+<body>
+	<!-- p*4>lorem -->
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quos, distinctio aliquid deserunt ratione accusamus id dolore non, tempora molestias repellat ducimus tenetur sequi facere omnis ullam cum perspiciatis quis.</p>
+	<p>Explicabo iure ratione ea, voluptatem assumenda officiis consequuntur, dolores corporis at nulla eligendi veritatis libero mollitia hic est a error recusandae magni, quis! Ratione esse, asperiores assumenda rem. Recusandae, suscipit!</p>
+	<p style="color:blue;">Unde cum aliquid beatae nihil maxime repellat odit modi inventore alias fugit atque deleniti velit sit est distinctio fuga doloribus, minus necessitatibus, dolores libero sapiente recusandae quam illum vero. Recusandae.</p>
+	<p style="font-size:30px;color:skyblue;">Corporis nisi architecto ipsum ratione inventore culpa quod voluptatum repellendus tempora iure quia omnis dolor, ipsam vero nostrum cupiditate exercitationem quidem totam quaerat, qui quo. Praesentium, tempore tenetur facere! Excepturi.</p>
+
+	<style>
+		/*ul{color: red;}*/
+		#nav{color: white;}
+		.menu{color: black;}
+
+		/*   * < tag name < class name < id name < inline style < !important*/
+	</style>
+
+	<!-- ul#nav>li.menu*5>{menu} -->
+	<ul id="nav">
+		<li class="menu" style="color: red;">menu</li>
+		<li class="menu">menu</li>
+		<li class="menu">menu</li>
+		<li class="menu">menu</li>
+		<li class="menu">menu</li>
+	</ul>
+
+	
+	<style>
+		#nav1>li{color:red;}
+		ul#nav1>li{color:red;}
+		ul#nav1 li{color:red;}
+		ul#nav1>li>a{color:red;}
+
+		ul#nav1 a{color:blue;}
+	</style>
+	
+	<!-- ul#nav1>li.menu1*5>{menu} -->
+	<ul id="nav1">
+		<li class="menu1">menu</li>
+		<li class="menu1">menu</li>
+		<li class="menu1">menu</li>
+		<li class="menu1">menu</li>
+		<li class="menu1">menu</li>
+	</ul>
+
+	<header id="header">
+		<h1>logo</h1>
+		<nav id="nav">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</nav>
+	</header>
+
+
+</body>
+</html>
