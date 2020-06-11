@@ -9,10 +9,28 @@
 		*{margin: 0;padding: 0;box-sizing: border-box;}
 		a:link,a:visited{color: black;text-decoration: none;}
 		li{list-style: none;}
+		.clearfix:after{content: "";display: block;clear:both;}
 
 		/*header*/
-		div.headerTop{width: 980px;height: 75px;margin:0 auto;}
+		div.utilWrap{border-bottom: 1px solid #ccc;}
+		div.util{width: 980px;margin: 0 auto;}
+		ul.utilMenu{margin-left: auto;width: 280px;}
+		ul.utilMenu>li{float: left;position: relative;}
+		ul.utilMenu>li:after{content: "";display: block;width: 1px;height: 10px;background-color: #000;position: absolute;top: 10px;right: 0;}
+		ul.utilMenu>li:last-child:after{content:"" ;display: none;}
+		ul.utilMenu>li>a{display: block;padding: 0 10px;line-height: 30px;}
+
+		div.headerTop{width: 980px;margin:0 auto;position: relative;}
 		div.headerTop>h1.logo{text-align: center;line-height: 75px;}
+		div.headerTop>div.toggle{position: absolute;width: 50px;height: 50px;border: 1px solid #ddd;right: 0;top: 13px;cursor: pointer;}
+		div.headerTop div.box1,
+		div.headerTop div.box2,
+		div.headerTop div.box3
+		{width: 20px;height: 3px;background-color: #666;position: absolute;border-radius: 2px;}
+		div.headerTop div.box1{top: 14px;left: 14px;}
+		div.headerTop div.box2{top: 22px;left: 14px;}
+		div.headerTop div.box3{top: 30px;left: 14px;}
+
 
 		div.gnbWrap{background-color: #1d5da4;}
 		div.gnbWrap>nav.gnbMenu{width: 980px;margin: 0 auto;}
@@ -24,39 +42,74 @@
 
 		/*visualWrap*/
 		div.visualWrap{height: 400px; background-color: #233e6f; background-image: url(images/visual_bg02.jpg);background-repeat: no-repeat;background-position: center;}
+		div.visualWrap>div.visual{position: relative;overflow:hidden;width: 980px;height: 400px;_background-color: skyblue;margin: 0 auto}
+		div.visual>img.light{position: absolute;right: 10px;top: 50px;}
+		div.visual>img.vTitle{position: absolute;left: 0;top: 100px;}
 
 		/*section*/
-		div.section{background-color: #eee;}
-		ul.card{width: 980px;margin: 0 auto;}
-		ul.card:after{content: "";clear: both;display: block;}
-		ul.card>li{float: left;width: 20%;height: 195px;text-align: center;color: white;padding: 20px;}
-		ul.card>li:nth-child(1){background-color: #7c99b9;}
-		ul.card>li:nth-child(2){background-color: #4f74a1;}
-		ul.card>li:nth-child(3){background-color: #4b8ce0;}
-		ul.card>li:nth-child(4){background-color: #3db5f2;}
-		ul.card>li:nth-child(5){background-color: #9dc8ff;}
-		ul.card>li>img{margin-bottom: 15px;}
-		ul.card>li>p{font-size: 13px}
-		ul.card>li>h3{margin-bottom: 8px;}
+		div.section{background-color: #eee;margin-bottom: 25px;}
+		div.section ul.card{width: 980px;margin: 0 auto;}
+		div.section ul.card:after{content: "";clear: both;display: block;}
+		div.section ul.card>li{float: left;width: 20%;height: 195px;text-align: center;color: white;padding: 20px;}
+		div.section ul.card>li:nth-child(1){background-color: #7c99b9;}
+		div.section ul.card>li:nth-child(2){background-color: #4f74a1;}
+		div.section ul.card>li:nth-child(3){background-color: #4b8ce0;}
+		div.section ul.card>li:nth-child(4){background-color: #3db5f2;}
+		div.section ul.card>li:nth-child(5){background-color: #9dc8ff;}
+		div.section ul.card>li>img{margin-bottom: 15px;}
+		div.section ul.card>li>p{font-size: 12px}
+		div.section ul.card>li>h3{margin-bottom: 8px;}
+
+		/*contentsOne*/
+		div.conWrapOne{width: 980px;margin: 0 auto;}
+		div.conWrapOne ul.card{}
+		div.conWrapOne ul.card>li{float: left;width: 310px;margin-right: 25px;}
+		div.conWrapOne ul.card>li:last-child{margin-right: 0;}
+		div.conWrapOne img.cardImg{display: block;}
+		div.conWrapOne div.cardBody{padding: 20px;border: 1px solid #ddd;border-top: 0 none;color:#9b9b9b}
+		div.conWrapOne h3{margin-bottom: 10px;color: #6e6e6e}
+
 	</style>
 </head>
 <body>
-	<div class="headerTop">
-		<h1 class="logo"><a href="#">HIMEDIA</a></h1>
+	<header id="header">
+			<div class="utilWrap">
+				<div class="util">
+					<ul class="utilMenu clearfix">
+						<li><a href="#">Login</a></li>
+						<li><a href="#">Join</a></li>
+						<li><a href="#">Contact us</a></li>
+						<li><a href="#">English</a></li>
+					</ul>
+				</div>
+			</div>
+				<div class="headerTop">
+			<h1 class="logo"><a href="#">HIMEDIA</a></h1>
+			<div class="toggle">
+				<div class="box1"></div>
+				<div class="box2"></div>
+				<div class="box3"></div>
+			</div>
+				</div>
+				<div class="gnbWrap"> <!-- 100% -->
+			<nav class="gnbMenu"> <!-- 980px -->
+				<ul>
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">제품소개</a></li>
+					<li><a href="#">사업영역</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">사회공헌</a></li>
+					<li><a href="#">인재채용</a></li>
+				</ul>
+			</nav>
+				</div>
+	</header>
+	<div class="visualWrap">
+		<div class="visual">
+			<img src="images/light01.png" alt="" class="light">
+			<img src="images/title01.png" alt="" class="vTitle">
+		</div>
 	</div>
-	<div class="gnbWrap"> <!-- 100% -->
-		<nav class="gnbMenu"> <!-- 980px -->
-			<ul>
-				<li><a href="#">회사소개</a></li>
-				<li><a href="#">제품소개</a></li>
-				<li><a href="#">사업영역</a></li>
-				<li><a href="#">고객센터</a></li>
-				<li><a href="#">사회공헌</a></li>
-				<li><a href="#">인재채용</a></li>
-			</ul>
-		</nav>
-	</div>
-	<div class="visualWrap"></div>
 	<div class="section">
 		<ul class="card">
 			<li>
@@ -83,6 +136,31 @@
 				<img src="images/icon05.png" alt="아이콘5">
 				<h3>비전</h3>
 				<p>소외된 이웃과 함께합니다.</p>
+			</li>
+		</ul>
+	</div>
+	<div class="conWrapOne">
+		<ul class="card">
+			<li>
+				<img src="images/banner01.jpg" alt="" class="cardImg">
+				<div class="cardBody">
+					<h3>회사 개요</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+			</li>
+			<li>
+				<img src="images/banner02.jpg" alt="" class="cardImg">
+				<div class="cardBody">
+					<h3>사업분야</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+			</li>
+			<li>
+				<img src="images/banner03.jpg" alt="" class="cardImg">
+				<div class="cardBody">
+					<h3>환경경영</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
 			</li>
 		</ul>
 	</div>
