@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+
+		nav.gnb{width: 1200px;height: 50px;background: pink;margin: 0 auto;}
+		nav.gnb>ul{}
+		nav.gnb>ul>li{float: left;width: 25%;}
+		nav.gnb>ul>li>a{display: block;line-height: 50px;text-align: center;}
+		nav.gnb>ul>li>a:hover{background: skyblue;}
+
+		nav.gnb>ul>li:nth-child(1) .smenu{display: block;}
+		
+		.smenu{width: 100%;display: none;position: absolute;left: 0;background: skyblue;}
+		.smenu>li{float: left;}
+		.smenu>li>a{width: 150px;display: block;text-align: center;line-height: 40px;}
+		
+
+
+
+		.smenu{}
+	</style>
+</head>
+<body>
+	<nav class="gnb">
+		<ul class="clearfix">
+			<li><a href="#">menu01</a>
+				<ul class="smenu clearfix">
+					<li><a href="#">menu0101</a></li>
+					<li><a href="#">menu0102</a></li>
+					<li><a href="#">menu0103</a></li>
+				</ul>
+			</li>
+			<li><a href="#">menu02</a>
+				<ul class="smenu">
+					<li><a href="#">menu0201</a></li>
+					<li><a href="#">menu0202</a></li>
+					<li><a href="#">menu0203</a></li>
+				</ul>
+			</li>
+			<li><a href="#">menu03</a>
+				<ul class="smenu">
+					<li><a href="#">menu0301</a></li>
+					<li><a href="#">menu0302</a></li>
+					<li><a href="#">menu0303</a></li>
+				</ul>
+			</li>
+			<li><a href="#">menu04</a>
+				<ul class="smenu">
+					<li><a href="#">menu0401</a></li>
+					<li><a href="#">menu0402</a></li>
+					<li><a href="#">menu0403</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>
