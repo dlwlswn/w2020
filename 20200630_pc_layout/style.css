@@ -75,9 +75,38 @@
 		margin-bottom: 10px;
 	}
 	#main_aside{
-		width: 200px;float: right;
-		background: gray;height: 200px;
+		width: 200px;float: right
+		;height: 200px;
 	}
+	#main_aside .buttons>label{
+		display: block;float: left;
+		width: 100px;height: 30px;
+		line-height: 30px;text-align: center;
+		cursor: pointer;background-color: skyblue;
+		border-radius: 10px 10px 0 0;
+	}
+	.inp:nth-child(1):checked ~ div.buttons > label:first-child{background-color: #f00 !important;}
+	.inp:nth-child(2):checked ~ div.buttons > label:last-child{background-color: #ff0 !important;}
+	
+	.inp:nth-child(1),.inp:nth-child(2){display: none;}
+	.inp:nth-child(1):checked ~ div.tab_items1{display: block;}
+	.inp:nth-child(1) ~ div.tab_items1{display: none;}
+
+	.inp:nth-child(2):checked ~ div.tab_items2{display: block;}
+	.inp:nth-child(2) ~ div.tab_items2{display: none;}
+
+	.item{
+		padding: 10px;border: 1px solid #000;
+		border-top: 0 none;
+	}
+	.thumbnail{float: left;}
+	.des{float: left;margin-left: 10px;}
+	.des > strong{
+		width: 110px;display: block;
+		white-space: nowrap;text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
 
 /*footer*/
 #main_footer{
