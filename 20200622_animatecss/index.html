@@ -3,71 +3,91 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
-	<title>animatecss</title>
+	<title>animaition</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/animate.css">
-	<script src="../js/wow.js"></script>
-	<script>
-		new WOW().init();
-	</script>
 	<style>
 		.box{
-			width: 500px;height: 130px;
-			/*background:skyblue;*/
-			/*position: absolute;
-			top: 50%;margin-top:-56px;
-			left: 50%;margin-left:-250px;*/
-			text-align: center;
+			width: 100px;height: 100px;
+			background-color: #f00;
+			_animation-name:ani; /*name*/
+			animation-duration: 1s; /*애니메이션 작동시간*/
+			animation-fill-mode:forwards; /*종료시점*/
+			animation-iteration-count:infinite; /*반복 time*/
+			animation-direction:alternate; /*번갈아서 나오기*/
+			_animation-delay:1s; /*지연시간*/
+			animation-timing-function: ease;
+			_position: absolute;
 		}
-		.gap{height: 2000px;}
-		.wrap{padding:50px 0;}
-		.container{width: 1000px;margin: 0 auto;}
-		.container ul li{
-			float: left;margin-right: 25px;width:231.25px;
-			height: 231.25px;background:orange;border-radius:10px;
+		@keyframes ani{
+			/*from{width: 100px;}*/ /*시작*/
+			/*to{width: 200px;}*/   /*끝*/
+			0%{width: 100px;background-color: #f00;height: 100px;}
+			50%{width: 400px;background-color: #0f0;height: 50px;}
+			100%{width: 500px;background-color: #00f;height: 10px;}
 		}
-		.container ul li:last-child{margin-right:0;}
-		.gray{background: #ddd;}
-		.cycle{border-radius:120px !important;}
+
+		.boxWrap{
+			width: 300px;height: 300px;
+			background-color:skyblue;
+			position: relative;
+		}
+		.line{
+			width: 0;height: 10px;
+			background-color: #00f;
+			_animation-name:lineAni;
+			animation-duration:1s;
+			animation-fill-mode:forwards;
+		}
+		@keyframes lineAni{
+			from{width: 0;}
+			to{width: 100%;}
+		}
+		.line1{width: 10px;height: 0;background-color: #00f;position: absolute;top:0;
+			_animation-name:lineAniOne;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+		}
+		@keyframes lineAniOne{
+			from{height: 0;}
+			to{height: 100%;}
+		}
+
+		.line2{width: 10px;height: 0;background-color: #00f;position: absolute;bottom:0;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+			right:0;
+		}
+		@keyframes lineAniTwo{
+			from{height: 0;}
+			to{height: 100%;}
+		}
+
+		.line3{width: 0px;height: 10px;background-color: #00f;position: absolute;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+			right: 0;bottom: 0;
+		}
+		@keyframes lineAniThree{
+			from{width: 0;}
+			to{width: 100%;}
+		}
+
+		.boxWrap:hover .line{animation-name:lineAni;}
+		.boxWrap:hover .line1{animation-name:lineAniOne;}
+		.boxWrap:hover .line2{animation-name:lineAniTwo;}
+		.boxWrap:hover .line3{animation-name:lineAniThree;}
 
 	</style>
 </head>
 <body>
-	<div class="box animated bounceInDown">
-		<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, voluptates.</h1>
-	</div>
+	<div class="box"></div>
 
-	<div class="gap"></div>
 
-	<div class="wrap gray">
-		<div class="container">
-			<ul class="clearfix">
-				<li class="cycle wow zoomIn" data-wow-delay="0">Lorem.</li>
-				<li class="cycle wow zoomIn" data-wow-delay="0.3s">Velit!</li>
-				<li class="cycle wow zoomIn" data-wow-delay="0.6s">Incidunt.</li>
-				<li class="cycle wow zoomIn" data-wow-delay="0.9s">Repudiandae.</li>
-			</ul>
-		</div>
-	</div>
-	<div class="wrap">
-		<div class="container">
-			<ul class="clearfix">
-				<li class="wow bounceInLeft" data-wow-delay="1.0s">Lorem.</li>
-				<li class="wow bounceInUp" data-wow-delay="1.2s">Velit!</li>
-				<li class="wow bounceInDown" data-wow-delay="1.4s">Incidunt.</li>
-				<li class="wow bounceInRight" data-wow-delay="1.6s">Repudiandae.</li>
-			</ul>
-		</div>
-	</div>
-	<div class="wrap gray">
-		<div class="container">
-			<ul class="clearfix">
-				<li class="wow pulse" data-wow-iteration="infinite"  data-wow-delay="2.0s">Lorem.</li>
-				<li class="wow pulse" data-wow-iteration="infinite"  data-wow-delay="2.2s">Velit!</li>
-				<li class="wow pulse" data-wow-iteration="infinite"  data-wow-delay="2.4s">Incidunt.</li>
-				<li class="wow pulse" data-wow-iteration="infinite"  data-wow-delay="2.6s">Repudiandae.</li>
-			</ul>
-		</div>
+	<div class="boxWrap">
+		<div class="line"></div>
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
 	</div>
 </body>
 </html>
