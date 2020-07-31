@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>object</title>
+</head>
+<body>
+	<script>
+		var kdata=["서울","부산","청주","대구"];
+
+		kdata.forEach(printArr);
+		function printArr(item,index){
+			document.write(index+". "+item+"<br>");
+		}
+
+		function printArrOne(){
+			for(var i=0;i<kdata.length;i++){
+				var num = i+1
+				document.write(i+ ". " +kdata[i]+"<br>");
+			}
+		}
+		printArrOne();
+	</script>
+</body>
+</html>

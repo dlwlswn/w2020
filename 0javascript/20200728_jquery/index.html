@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// $("p").hide();
+			// $("p").eq(0).hide();
+			var $plen = $("p").length;
+			console.log($plen);
+			for(var i=0;i<$plen;i++){
+				// $("p").eq(i).hide();
+				$("p").eq(i).css("background","skyblue").css("font-size",30);
+			}
+
+			// $(선택자).on("click",function(){});
+			// $(선택자).click(function(){});
+			// dom.addEventListener("click",function(){});
+			$(".btn_hide").click(function(){
+				$("p").slideUp();
+			});
+			$(".btn_show").click(function(){
+				$("p").slideDown();
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<p>1.Lorem ipsum dolor.</p>
+	<p>2.Quod, placeat? Quis!</p>
+	<p>3.Eos commodi, minima!</p>
+	<p>4.Enim, corrupti, vel.</p>
+	<p>5.Illum, molestiae, sint!</p>
+	<p>6.Consequatur, temporibus sint.</p>
+	<p>7.Fugiat, tempore, odit.</p>
+	<p>8.Voluptatum aspernatur, reprehenderit.</p>
+	<p>9.Sapiente, fugiat, modi.</p>
+	<p>10.Aperiam, ea tempore.</p>
+
+	<button type="button" class="btn_show">button1</button>
+	<button type="button" class="btn_hide">button2</button>
+
+	<script>
+		// var tagP = document.getElementsByTagName("p");
+		// tagP[0].style.display = "none";
+
+		// var tagP = document.getElementsByTagName("p");
+		// for(var i=0;i<tagP.length;i++);{
+		// 	tagP[i].style.display = "none";
+		// }
+	</script>
+	<style>
+		ul>li{text-align: center; float: left;width: 100px;background: pink;margin-right: 10px;line-height: 40px;}
+		.box1, .box2, .box3{width: 400px;padding: 20px;border: 1px solid #000;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".box2,.box3").hide();
+			$("ul>li").eq(0).click(function(){
+				$(".box1").show();
+				$(".box2").hide();
+				$(".box3").hide();
+			});
+			$("ul>li").eq(1).click(function(){
+				$(".box1").hide();
+				$(".box2").show();
+				$(".box3").hide();
+			});
+			$("ul>li").eq(2).click(function(){
+				$(".box1").hide();
+				$(".box2").hide();
+				$(".box3").show();
+			});
+		});
+		
+	</script>
+	<ul class="clearfix">
+		<li>menu1</li> <!-- $("ul>li").eq(0).click(function(){}); -->
+		<li>menu2</li> <!-- $("ul>li").eq(1).click(); -->
+		<li>menu3</li> <!-- $("ul>li").eq(2).click(); -->
+	</ul>
+	<div class="box1">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+	<div class="box2">2. Magnam assumenda velit tempore debitis nisi earum deleniti?</div>
+	<div class="box3">3. Nulla dolorem pariatur consequuntur odit aspernatur, enim cupiditate.</div>
+</body>
+</html>
