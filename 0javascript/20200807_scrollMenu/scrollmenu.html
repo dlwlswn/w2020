@@ -25,13 +25,21 @@
 		
 		#car1.move{left:300px;opacity:1;}
 		#car2.move{right: 300px;opacity: 1;}
+		.top{position: fixed;width: 100px;height: 100px;line-height: 100px;right: 50px;bottom: 50px;border-radius: 50%;background: #000;color: white;text-align: center;cursor: pointer;animation:viewTop 1s infinite alternate;opacity: 0;transition: 0.3s}
+		@keyframes viewTop{
+			from{transform: translateY(0);}
+			to{transform: translateY(-20px);}
+		}
+		.top.view{opacity: 1}
 	</style>
 	<script>
 		$(function(){
 			var menuPos = $(".nav").offset().top;
 			var car1 = $("#car1").offset().top;
 			var car2 = $("#car2").offset().top;
+			var winHeight = $(document).height();
 			$(".menuPos").html(menuPos);
+			$(".winHeight").html(winHeight);
 
 			$(window).scroll(function(){
 				var scrollY = $(window).scrollTop();
@@ -55,6 +63,16 @@
 					$("#car2").removeClass("move")
 				}
 
+				if(winHeight/2 < scrollY){
+					$(".top").addClass("view");
+				}else{
+					$(".top").removeClass("view")
+				}
+
+			});
+
+			$(".top").click(function(){
+				$("html,body").animate({scrollTop:0},300)
 			});
 
 		});
@@ -64,6 +82,7 @@
 	<div class="viewBox">
 		스크롤 위치 : <span class="scrollY">0</span><br>
 		메뉴위치 : <span class="menuPos">0</span>
+		브라우저 전체높이 : <span class="winHeight">0</span>
 	</div>
 	<div id="wrapper">
 		<p>1</p>
@@ -178,5 +197,6 @@
 		<p>99</p>
 		<p>100</p>
 	</div>
+	<div class="top">top</div>
 </body>
 </html>
